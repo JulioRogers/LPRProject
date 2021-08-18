@@ -1,4 +1,4 @@
-# Rename all *.txt to *.text
+# Rename all *.txt~.txt to namefile(idx).txt where idx is a iterator.
 
 idx=0
 for f in *.txt~.txt; do 
