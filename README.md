@@ -36,7 +36,7 @@ The primary sequence to describe the data preparing process of the license plate
 
 1. Record videos from natural sceneries <br/>
 
-The videos that are used for the training process were taken from a surveillance scenario. It was from a camera in Malteria shopping center, Latacunga - Ecuador. In this case, we record three different videos of one hour with a frame rate of 20 fps and with a size of 1920x1080. The two first videos were used for training and valuation. The last one was edited to have a permanent flow of cars and used for inference.
+The videos that are used for the training process were taken from a surveillance scenario. It was from a camera in [Malteria](https://malteriaplaza.com) shopping center, Latacunga - Ecuador. In this case, we record three different videos of one hour with a frame rate of 20 fps and with a size of 1920x1080. The two first videos were used for training and valuation. The last one was edited to have a permanent flow of cars and used for inference.
 
 2. Divide the obtained videos into frames <br/>
 
