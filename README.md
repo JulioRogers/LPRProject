@@ -44,15 +44,15 @@ The videos used for training and valuation were cropped by frames using a python
 
 3. Localize car and plate <br/>
 
-The objective of make crops from each video was to make localization of plates and cars using bounding boxes on each video crop. To gain it, we use [IMB cloud annotations]([https://cloud.annotations.ai](https://cloud.annotations.ai/)), an open-source image annotation tool where you can quickly build real-time object detection models without code. The IMB tool gives different options to export the annotations after detecting the elements at the cropped image. In this case, we exported as YOLO.
+The objective of make crops from each video was to make localization of plates and cars using bounding boxes on each video crop. To gain it, we use [IMB cloud annotations](https://cloud.annotations.ai/), an open-source image annotation tool where you can quickly build real-time object detection models without code. The IMB tool gives different options to export the annotations after detecting the elements at the cropped image. In this case, we exported as YOLO.
 
 4. According to the annotations, make a plate crop. <br/>
 
-We make another python script, "crop_plate.py" that crops the plate from the images using the coordinates from the YOLO annotations. After making the crops, we proceeded to label the plates with their transcription using an event app called [labelerJS]([https://github.com/Tubaher/labelerJS](https://github.com/Tubaher/labelerJS)). After cropping the plates, the images are used to be in different sizes. At this point, it is crucial to make a resize using the python script "[resize.py](http://resize.py/)". In this case, we resize the images to 96x48 because this is the size that our secondary classifier (LPRnet) requires as training input. After labeling, we obtain 590 plate labeled images, where 560 were for training and 30 for valuation.
+We make another python script, [crop_plate.py](https://github.com/JulioRogers/LPRProject/blob/main/crop_plates.py) that crops the plate from the images using the coordinates from the YOLO annotations. After making the crops, we proceeded to label the plates with their transcription using an event app called [labelerJS](https://github.com/Tubaher/labelerJS). After cropping the plates, the images are used to be in different sizes. At this point, it is crucial to make a resize using the python script [resize.py](https://github.com/JulioRogers/LPRProject/blob/main/resize.py). In this case, we resize the images to 96x48 because this is the size that our secondary classifier (LPRnet) requires as training input. After labeling, we obtain 590 plate labeled images, where 560 were for training and 30 for valuation.
 
 5. Images and bounding boxes resize <br/>
 
-The Primary Detector takes as an input a specific size of the image. That is why it is necessary to resize the annotated images and their bounding boxes using the python script "resize_bbox.py". For this step is necessary to download the standard zip format from IBM cloud annotations.
+The Primary Detector takes as an input a specific size of the image. That is why it is necessary to resize the annotated images and their bounding boxes using the python script [resize_bbox.py](https://github.com/JulioRogers/LPRProject/blob/main/resize_bbox.py). For this step is necessary to download the standard zip format from IBM cloud annotations.
 
 ## Model training 
 
